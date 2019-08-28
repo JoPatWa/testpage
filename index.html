@@ -63,7 +63,7 @@
 		</iframe>
 	</div>
 	<form id="send_token" action="" method="post" target="add_payment">
-		<input type="hidden" name="token" value="" />
+		<input type="hidden" id="token" name="token" value="" />
 	</form>
 
 	<script type="text/javascript">
@@ -139,7 +139,9 @@
 				'dataType': 'json',
 				'data': JSON.stringify(requestBody),
 				'success': function (result) {
-					console.log(result);
+					$("token").val(result.token);
+					console.log(result.token);
+					return result;
 				}
 			});
 		}
