@@ -129,7 +129,7 @@
 						}
 					}
 				}
-				$('#btnOpenAuthorizeNetIFrame').click(postRequest()) 
+				$('#btnOpenAuthorizeNetIFrame').click(postRequest) 
 
 				var postRequest = function(token, other, callback) {
 					$.post('https://apitest.authorize.net/xml/v1/request.api',requestBody, function(data) {
