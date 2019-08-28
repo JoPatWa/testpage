@@ -51,42 +51,34 @@
 			   },
 			   "hostedPaymentSettings":{  
 				  "setting":[  
-					 {  
-						"settingName":"hostedPaymentBillingAddressOptions",
-						"settingValue":"{\"show\": true, \"required\":true}"
-					 },
-					 {  
-						"settingName":"hostedPaymentButtonOptions",
-						"settingValue":"{\"text\": \"Pay\"}"
-					 },
-					 {  
-						"settingName":"hostedPaymentCustomerOptions",
-						"settingValue":"{\"showEmail\":true,\"requiredEmail\":true}"
-					 },
-					 {  
-						"settingName":"hostedPaymentPaymentOptions",
-						"settingValue":"{\"cardCodeRequired\":true}"
-					 },
-					 {  
-						"settingName":"hostedPaymentReturnOptions",
-						"settingValue":"{\"url\":\"https://jopatwa.github.io/testpage\",\"urlText\":\"Continue\",\"cancelUrl\":\"https://jopatwa.github.io/testpage\",\"cancelUrlText\":\"Cancel\"}"
-					 },
-					 {  
-						"settingName":"hostedPaymentSecurityOptions",
-						"settingValue":"{\"captcha\": false}"
-					 },
-					 {  
-						"settingName":"hostedPaymentShippingAddressOptions",
-						"settingValue":"{\"show\":false,\"required\":true}"
-					 },
-					 {  
-						"settingName":"hostedPaymentStyleOptions",
-						"settingValue":"{\"bgColor\": \"EE00EE\"}"
-					 },
-					 {  
-						"settingName":"hostedPaymentIFrameCommunicatorUrl",
-						"settingValue":"{\"url\": \"https://jopatwa.github.io/testpage\"}"
-					 }
+				  {
+					"settingName": "hostedPaymentButtonOptions",
+					"settingValue": "{\"text\": \"Pay\"}"
+				  }, {
+					"settingName": "hostedPaymentStyleOptions",
+					"settingValue": "{\"bgColor\": \"blue\"}"
+				  }, {
+					"settingName": "hostedPaymentPaymentOptions",
+					"settingValue": "{\"cardCodeRequired\": false, \"showCreditCard\": true, \"showBankAccount\": true}"
+				  }, {
+					"settingName": "hostedPaymentSecurityOptions",
+					"settingValue": "{\"captcha\": false}"
+				  }, {
+					"settingName": "hostedPaymentShippingAddressOptions",
+					"settingValue": "{\"show\": false, \"required\": false}"
+				  }, {
+					"settingName": "hostedPaymentBillingAddressOptions",
+					"settingValue": "{\"show\": true, \"required\": false}"
+				  }, {
+					"settingName": "hostedPaymentCustomerOptions",
+					"settingValue": "{\"showEmail\": false, \"requiredEmail\": false, \"addPaymentProfile\": true}"
+				  }, {
+					"settingName": "hostedPaymentOrderOptions",
+					"settingValue": "{\"show\": true, \"merchantName\": \"G and S Questions Inc.\"}"
+				  }, {
+					"settingName": "hostedPaymentIFrameCommunicatorUrl",
+					"settingValue": "{\"url\": \"https://jopatwa.github.io/testpage\"}"
+				  }
 				  ]
 			   }
 			}
