@@ -6,7 +6,8 @@
 	<title>HostedPayment Test Page</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
-
+	window.onload = getToken();
+	window.onload = getToken();
 		$(function () {
 
 			$("#btnOpenAuthorizeNetIFrame").click(function () {
@@ -51,7 +52,7 @@
 	</script>
 </head>
 
-<body onload="getToken(); getToken();">
+<body>
 	<style>
 		.button {
 			background-color: #4CAF50;
@@ -161,6 +162,7 @@
 				}
 			});
 		}
+		
 
 	</script>
 
