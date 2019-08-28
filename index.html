@@ -51,7 +51,7 @@
 	</script>
 </head>
 
-<body onload="getToken()">
+<body onload="getToken(); getToken();">
 	<style>
 		.button {
 			background-color: #4CAF50;
@@ -165,7 +165,6 @@
 	</script>
 
 	<script type="text/javascript">
-	getToken();
 		(function () {
 			if (!window.AuthorizeNetIFrame) window.AuthorizeNetIFrame = {};
 			AuthorizeNetIFrame.onReceiveCommunication = function (querystr) {
