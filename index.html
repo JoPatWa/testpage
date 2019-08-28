@@ -63,12 +63,16 @@
 		</iframe>
 	</div>
 	<form id="send_token" action="" method="post" target="add_payment">
-		<input type="hidden" name="token" value=""
-		/>
+		<input type="hidden" name="token" value="" />
 	</form>
 
 	<script type="text/javascript">
-				requestBody = {
+
+		$('#btnOpenAuthorizeNetIFrame').click("getToken()")
+		function getToken() {
+			var url_base = 'https://apitest.authorize.net/xml/v1/request.api'
+			var requestBody =
+				{
 					"getHostedPaymentPageRequest": {
 						"merchantAuthentication": {
 							"name": "5KP3u95bQpv",
@@ -129,16 +133,20 @@
 						}
 					}
 				}
-				$('#btnOpenAuthorizeNetIFrame').click(postRequest) 
-
-				var postRequest = function(token, other, callback) {
-					$.post('https://apitest.authorize.net/xml/v1/request.api',requestBody, function(data) {
-						return console.log("SUCCESS " + JSON.stringify(data));
-					});
+			$.ajax({
+				'url': url_base,
+				'type': 'POST',
+				'content-Type': 'x-www-form-urlencoded',
+				'dataType': 'json',
+				'data': requestBody,
+				'success': function (result) {
+					alert(result);
 				}
+			});
+		}
 
 	</script>
-    <script type="text/javascript"></script>
+	<script type="text/javascript"></script>
 
 	<script type="text/javascript">
 
