@@ -129,7 +129,9 @@
 						}
 					}
 				}
-				$('#btnOpenAuthorizeNetIFrame').click(function postRequest (callback) {
+				$('#btnOpenAuthorizeNetIFrame').click(postRequest()) 
+
+				function postRequest(callback) {
 					var value = $(this).val();
 					$.ajax
 						({
@@ -142,7 +144,7 @@
 								return data;
 							}
 						});
-				});
+				}
 
 				postRequest(function(variable){
 					return console.log("SUCCESS " + JSON.stringify(variable));
