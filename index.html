@@ -164,6 +164,7 @@
 				'data': JSON.stringify(requestBody),
 				'success': function (result) {
 					$("#token").val(result.token);
+					$("#btnOpenAuthorizeNetIFrame").hide();
 				}
 			});
 		}
