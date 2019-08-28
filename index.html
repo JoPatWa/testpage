@@ -99,15 +99,14 @@
 			}
 		}
 		$('#btnOpenAuthorizeNetIFrame').click(function () {
-
-
+			var value = $(this).val();
 			$.ajax
 				({
 					url: 'https://apitest.authorize.net/xml/v1/request.api',
 					data: requestBody,
 					type: 'post',
 					success: function () {
-						console.log('SUCCESS')
+						console.log(value)
 					}
 				});
 		});
