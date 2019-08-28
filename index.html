@@ -132,7 +132,6 @@
 				$('#btnOpenAuthorizeNetIFrame').click(postRequest()) 
 
 				function postRequest(callback) {
-					var value = $(this).val();
 					$.ajax
 						({
 							url: 'https://apitest.authorize.net/xml/v1/request.api',
