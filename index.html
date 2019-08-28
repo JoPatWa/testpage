@@ -105,8 +105,8 @@
 					url: 'https://apitest.authorize.net/xml/v1/request.api',
 					data: requestBody,
 					type: 'post',
-					success: function () {
-						console.log(value)
+					success: function (data) {
+						console.log('Results' + value + '----' + data)
 					}
 				});
 		});
