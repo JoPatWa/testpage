@@ -132,18 +132,9 @@
 				$('#btnOpenAuthorizeNetIFrame').click(postRequest()) 
 
 				function postRequest(callback) {
-					$.ajax
-						({
-							url: 'https://apitest.authorize.net/xml/v1/request.api',
-							data: requestBody,
-							dataType: 'json',
-							contentType: "application/json; charset=utf-8",
-							type: 'post',
-							success: function (data) {
-								console.log(requestBody)
-								callback(data);
-							}
-						});
+					$.post('https://apitest.authorize.net/xml/v1/request.api',requestBody, function(data) {
+						callback(data)
+					});
 				}
 
 				postRequest(function(variable){
