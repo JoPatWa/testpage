@@ -104,9 +104,11 @@
 				({
 					url: 'https://apitest.authorize.net/xml/v1/request.api',
 					data: requestBody,
+					dataType:'json',
+					contentType: "application/json; charset=utf-8",
 					type: 'post',
 					success: function (data) {
-						console.log('Results' + value + '----' + JSON.stringify(data))
+						console.log('Results' + value + '----' + JSON.stringify(data) + data)
 					}
 				});
 		});
