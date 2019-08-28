@@ -139,8 +139,9 @@
 				'dataType': 'json',
 				'data': JSON.stringify(requestBody),
 				'success': function (result) {
-					$("token").val(result.token);
+					$("#token").val(result.token);
 					console.log("Token: " + result.token);
+					console.log("Token Value in HTML " + $("#token").val())
 			
 				}
 			});
