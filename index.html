@@ -25,7 +25,63 @@
 
 	<div>
 		Open Authorize.Net in an iframe to complete transaction
-		<button id="btnOpenAuthorizeNetIFrame" onclick="">Show Payment Form</button>
+		<button id="btnOpenAuthorizeNetIFrame" onclick='$.post("https://apitest.authorize.net/xml/v1/request.api",
+		{
+		"getHostedPaymentPageRequest": {
+		"merchantAuthentication": {
+			"name": "5KP3u95bQpv",
+			"transactionKey": "346HZ32z3fP4hTG2"
+		},
+		"transactionRequest": {
+		"transactionType": "authCaptureTransaction",
+		"amount": "20.00",
+		"customer": {
+		"email": "bmcmanus@mail.com"
+		},
+		"billTo": {
+		"firstName": "Ellen",
+		"lastName": "Johnson",
+		"company": "Souveniropolis",
+		"address": "14 Main Street",
+		"city": "Pecan Springs",
+		"state": "TX",
+		"zip": "44628",
+		"country": "USA"
+		}
+		},
+		"hostedPaymentSettings": {
+		"setting": [{
+		"settingName": "hostedPaymentBillingAddressOptions",
+		"settingValue": "{\"show\": true, \"required\":true}"
+		}, {
+		"settingName": "hostedPaymentButtonOptions",
+		"settingValue": "{\"text\": \"Pay\"}"
+		}, {
+		"settingName": "hostedPaymentCustomerOptions",
+		"settingValue": "{\"showEmail\":true,\"requiredEmail\":true}"
+		}, {
+		"settingName": "hostedPaymentPaymentOptions",
+		"settingValue": "{\"cardCodeRequired\":true}"
+		}, {
+		"settingName": "hostedPaymentReturnOptions",
+		"settingValue": "{\"url\":\"https://www.mysite.com/continue\",\"urlText\":\"Continue\",\"cancelUrl\":\"https://mysite.com/cancel\",\"cancelUrlText\":\"Cancel\"}"
+		}, {
+		"settingName": "hostedPaymentSecurityOptions",
+		"settingValue": "{\"captcha\": false}"
+		}, {
+		"settingName": "hostedPaymentShippingAddressOptions",
+		"settingValue": "{\"show\":false,\"required\":true}"
+		}, {
+		"settingName": "hostedPaymentStyleOptions",
+		"settingValue": "{\"bgColor\": \"EE00EE\"}"
+		}]
+		}
+		}
+		},
+		function(data,status){
+		alert("Data: " + data + "\nStatus: " + status);
+		}
+		);'>Show Payment Form</button>
 	</div>
 	<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
 		<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no"
@@ -35,7 +91,7 @@
 	<form id="send_token" action="" method="post" target="add_payment">
 		<input type="hidden" name="token" value="" />
 	</form>
-
+<!--
 	<script type="text/javascript">
 		requestBody = {
 			"getHostedPaymentPageRequest": {
@@ -104,7 +160,7 @@
 				({
 					url: 'https://apitest.authorize.net/xml/v1/request.api',
 					data: requestBody,
-					dataType:'json',
+					dataType: 'json',
 					contentType: "application/json; charset=utf-8",
 					type: 'post',
 					success: function (data) {
@@ -113,6 +169,7 @@
 				});
 		});
 	</script>
+-->
 
 	<script type="text/javascript">
 
