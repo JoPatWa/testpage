@@ -55,7 +55,7 @@
 
 	<div>
 		Open Authorize.Net in an iframe to complete transaction
-		<button id="btnOpenAuthorizeNetIFrame" onclick=''>Show Payment Form</button>
+		<button id="btnOpenAuthorizeNetIFrame" onclick='getToken()'>Show Payment Form</button>
 	</div>
 	<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
 		<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no"
@@ -68,7 +68,6 @@
 
 	<script type="text/javascript">
 
-		$('#btnOpenAuthorizeNetIFrame').click(getToken())
 		function getToken() {
 			var url_base = 'https://apitest.authorize.net/xml/v1/request.api'
 			var requestBody =
