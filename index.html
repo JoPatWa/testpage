@@ -11,7 +11,7 @@
 
 			$("#btnOpenAuthorizeNetIFrame").click(function () {
 				$("#add_payment").show();
-				$("#send_token").attr({ "action": "https://apitest.authorize.net/xml/v1/request.api", "target": "add_payment" }).submit();
+				$("#send_token").attr({ "action": "https://test.authorize.net/payment/payment", "target": "add_payment" }).submit();
 				$(window).scrollTop($('#add_payment').offset().top - 50);
 			});
 
