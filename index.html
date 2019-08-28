@@ -137,15 +137,14 @@
 				'type': 'POST',
 				'content-Type': 'x-www-form-urlencoded',
 				'dataType': 'json',
-				'data': requestBody,
+				'data': JSON.stringify(requestBody),
 				'success': function (result) {
-					console.log(JSON.stringify(result));
+					console.log(result);
 				}
 			});
 		}
 
 	</script>
-	<script type="text/javascript"></script>
 
 	<script type="text/javascript">
 
