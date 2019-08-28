@@ -68,7 +68,7 @@
 
 	<script type="text/javascript">
 
-		$('#btnOpenAuthorizeNetIFrame').click("getToken()")
+		$('#btnOpenAuthorizeNetIFrame').click(getToken())
 		function getToken() {
 			var url_base = 'https://apitest.authorize.net/xml/v1/request.api'
 			var requestBody =
