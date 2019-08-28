@@ -71,19 +71,20 @@
 		}
 
 		.button-1 {
-			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow: 0 8px 16px 0 rgba(19, 128, 33, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
 	</style>
 
 
 	<div>
-		<center><button id="btnOpenAuthorizeNetIFrame" class="button-1" onclick='getToken()'>Show Payment Form</button></center>
+		<center><button id="btnOpenAuthorizeNetIFrame" class="button button-1" onclick='getToken()'>Show Payment Form</button></center>
 	</div>
-	<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
-		<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no"
-		 hidden="true">
+	<center>
+		<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
+			<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no" hidden="true">
 		</iframe>
-	</div>
+		</div>
+	</center>
 	<form id="send_token" action="" method="post" target="add_payment">
 		<input type="hidden" id="token" name="token" value="" />
 	</form>
