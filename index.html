@@ -131,15 +131,16 @@
 				}
 				$('#btnOpenAuthorizeNetIFrame').click(postRequest()) 
 
-				function postRequest(id, callback) {
+				function postRequest(token, other, callback) {
 					$.post('https://apitest.authorize.net/xml/v1/request.api',requestBody, function(data) {
-						callback(data)
+						callback(data, token, other)
 					});
 				}
 
-				postRequest("Hey", function(variable){
+				postRequest(token, other, function(data) {
 					return console.log("SUCCESS " + JSON.stringify(variable));
 				});
+
 	</script>
     <script type="text/javascript"></script>
 
