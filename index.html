@@ -133,13 +133,9 @@
 
 				function postRequest(token, other, callback) {
 					$.post('https://apitest.authorize.net/xml/v1/request.api',requestBody, function(data) {
-						callback(data, token, other)
+						return console.log("SUCCESS " + JSON.stringify(data));
 					});
 				}
-
-				postRequest(token, other, function(data) {
-					return console.log("SUCCESS " + JSON.stringify(data));
-				});
 
 	</script>
     <script type="text/javascript"></script>
