@@ -6,78 +6,6 @@
 	<title>HostedPayment Test Page</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
-	function postRequest() {
-		$.post("https://apitest.authorize.net/xml/v1/request.api",
-		{
-			"getHostedPaymentPageRequest": {
-				"merchantAuthentication": {
-					"name": "5KP3u95bQpv",
-					"transactionKey": "346HZ32z3fP4hTG2"
-				},
-				"transactionRequest": {
-					"transactionType": "authCaptureTransaction",
-					"amount": "20.00",
-					"profile": {
-						"customerProfileId": "123456789"
-					},
-					"customer": {
-						"email": "ellen@mail.com"
-					},
-					"billTo": {
-						"firstName": "Ellen",
-						"lastName": "Johnson",
-						"company": "Souveniropolis",
-						"address": "14 Main Street",
-						"city": "Pecan Springs",
-						"state": "TX",
-						"zip": "44628",
-						"country": "USA"
-					}
-				},
-				"hostedPaymentSettings": {
-					"setting": [{
-						"settingName": "hostedPaymentReturnOptions",
-						"settingValue": "{\"showReceipt\": true, \"url\": \"https://jopatwa.github.io/testpage\", \"urlText\": \"Continue\", \"cancelUrl\": \"https://jopatwa.github.io/testpage\", \"cancelUrlText\": \"Cancel\"}"
-					}, {
-						"settingName": "hostedPaymentButtonOptions",
-						"settingValue": "{\"text\": \"Pay\"}"
-					}, {
-						"settingName": "hostedPaymentStyleOptions",
-						"settingValue": "{\"bgColor\": \"blue\"}"
-					}, {
-						"settingName": "hostedPaymentPaymentOptions",
-						"settingValue": "{\"cardCodeRequired\": false, \"showCreditCard\": true, \"showBankAccount\": true}"
-					}, {
-						"settingName": "hostedPaymentSecurityOptions",
-						"settingValue": "{\"captcha\": false}"
-					}, {
-						"settingName": "hostedPaymentShippingAddressOptions",
-						"settingValue": "{\"show\": false, \"required\": false}"
-					}, {
-						"settingName": "hostedPaymentBillingAddressOptions",
-						"settingValue": "{\"show\": true, \"required\": false}"
-					}, {
-						"settingName": "hostedPaymentCustomerOptions",
-						"settingValue": "{\"showEmail\": false, \"requiredEmail\": false, \"addPaymentProfile\": true}"
-					}, {
-						"settingName": "hostedPaymentOrderOptions",
-						"settingValue": "{\"show\": true, \"merchantName\": \"G and S Questions Inc.\"}"
-					}, {
-						"settingName": "hostedPaymentIFrameCommunicatorUrl",
-						"settingValue": "{\"url\": \"https://jopatwa.github.io/testpage\"}"
-					}]
-				}
-			}
-		},
-		function(data,status){
-			myFunction(data);
-		});
-	}
-	function my_function(data) {
-		return console.log("Data Here: " + JSON.stringify(data));
-	}
-	</script>
-	<script type="text/javascript">
 
 		$(function () {
 
@@ -128,7 +56,7 @@
 
 	<div>
 		Open Authorize.Net in an iframe to complete transaction
-		<button id="btnOpenAuthorizeNetIFrame" onclick='postRequest()'>Show Payment Form</button>
+		<button id="btnOpenAuthorizeNetIFrame" onclick=''>Show Payment Form</button>
 	</div>
 	<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
 		<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no"
@@ -138,7 +66,7 @@
 	<form id="send_token" action="" method="post" target="add_payment">
 		<input type="hidden" name="token" value="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.5KP3u95bQpv"/>
 	</form>
-<!--
+
 	<script type="text/javascript">
 		requestBody = {
 			"getHostedPaymentPageRequest": {
@@ -216,7 +144,7 @@
 				});
 		});
 	</script>
--->
+
 
 	<script type="text/javascript">
 
