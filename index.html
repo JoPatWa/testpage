@@ -30,7 +30,7 @@
 				'success': function (results) {
 					console.log("News Result: " + JSON.stringify(results.articles[0]));
 					console.log("News Result: " + JSON.stringify(results.articles[0].source.name));
-					document.getElementById('news').innerHTML = results;
+					document.getElementById('news').innerHTML = JSON.stringify(results);
 				}
 
 			});
