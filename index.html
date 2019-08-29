@@ -82,6 +82,7 @@
 	<div>
 		<center><button id="btnNews" class="button button-1" onclick='getNews()'>Get News</button></center>
 	</div>
+	<div id="news"></div>
 	<center>
 		<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
 		<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no"
@@ -182,6 +183,10 @@
 					console.log("News Result: " + JSON.stringify(result));
 				}
 			});
+
+			var topNews = result.articles[0]
+			console.log("Top News: " + topNews)
+			$('#news').html(topNews);
 		}
 
 	</script>
