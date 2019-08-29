@@ -29,8 +29,6 @@
 				'dataType': 'json',
 				'success': function (result) {
 					console.log("News Result: " + JSON.stringify(results.articles[0]));
-					var topNews = result.articles[0];
-					$('#news').html(<b> top news </b> + topNews);
 				}
 				
 			});
