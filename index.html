@@ -32,9 +32,9 @@
 					console.log("News Result: " + JSON.stringify(results.articles[0].source.name));
 					return results;
 				}
-				
+
 			});
-			
+
 		}
 	</script>
 
@@ -103,7 +103,6 @@
 	<div>
 		<center>
 			<button id="btnNews" class="button button-1" onclick='getNews()'>Get News</button>
-			<script="text/javascript">console.log("News Result: " + JSON.stringify(results.articles[0].source.name));</script>
 		</center>
 	</div>
 	<div id="news"></div>
@@ -120,81 +119,81 @@
 
 	<script type="text/javascript">
 
-		function getToken() {
-			var url_base = 'https://apitest.authorize.net/xml/v1/request.api'
-			var requestBody =
-				{
-					"getHostedPaymentPageRequest": {
-						"merchantAuthentication": {
-							"name": "5KP3u95bQpv",
-							"transactionKey": "346HZ32z3fP4hTG2"
-						},
-						"transactionRequest": {
-							"transactionType": "authCaptureTransaction",
-							"amount": "250.00",
-							"profile": {
-								"customerProfileId": "123456789"
-							},
-							"customer": {
-								"email": "ellen@mail.com"
-							},
-							"billTo": {
-								"firstName": "Ellen",
-								"lastName": "Johnson",
-								"company": "Souveniropolis",
-								"address": "14 Main Street",
-								"city": "Pecan Springs",
-								"state": "TX",
-								"zip": "44628",
-								"country": "USA"
+				function getToken() {
+					var url_base = 'https://apitest.authorize.net/xml/v1/request.api'
+					var requestBody =
+						{
+							"getHostedPaymentPageRequest": {
+								"merchantAuthentication": {
+									"name": "5KP3u95bQpv",
+									"transactionKey": "346HZ32z3fP4hTG2"
+								},
+								"transactionRequest": {
+									"transactionType": "authCaptureTransaction",
+									"amount": "250.00",
+									"profile": {
+										"customerProfileId": "123456789"
+									},
+									"customer": {
+										"email": "ellen@mail.com"
+									},
+									"billTo": {
+										"firstName": "Ellen",
+										"lastName": "Johnson",
+										"company": "Souveniropolis",
+										"address": "14 Main Street",
+										"city": "Pecan Springs",
+										"state": "TX",
+										"zip": "44628",
+										"country": "USA"
+									}
+								},
+								"hostedPaymentSettings": {
+									"setting": [{
+										"settingName": "hostedPaymentReturnOptions",
+										"settingValue": "{\"showReceipt\": true, \"url\": \"https://jopatwa.github.io/testpage\", \"urlText\": \"Continue\", \"cancelUrl\": \"https://jopatwa.github.io/testpage\", \"cancelUrlText\": \"Cancel\"}"
+									}, {
+										"settingName": "hostedPaymentButtonOptions",
+										"settingValue": "{\"text\": \"Pay\"}"
+									}, {
+										"settingName": "hostedPaymentStyleOptions",
+										"settingValue": "{\"bgColor\": \"blue\"}"
+									}, {
+										"settingName": "hostedPaymentPaymentOptions",
+										"settingValue": "{\"cardCodeRequired\": false, \"showCreditCard\": true, \"showBankAccount\": true}"
+									}, {
+										"settingName": "hostedPaymentSecurityOptions",
+										"settingValue": "{\"captcha\": false}"
+									}, {
+										"settingName": "hostedPaymentShippingAddressOptions",
+										"settingValue": "{\"show\": false, \"required\": false}"
+									}, {
+										"settingName": "hostedPaymentBillingAddressOptions",
+										"settingValue": "{\"show\": true, \"required\": false}"
+									}, {
+										"settingName": "hostedPaymentCustomerOptions",
+										"settingValue": "{\"showEmail\": true, \"requiredEmail\": true, \"addPaymentProfile\": true}"
+									}, {
+										"settingName": "hostedPaymentOrderOptions",
+										"settingValue": "{\"show\": true, \"merchantName\": \"G and S Questions Inc.\"}"
+									}, {
+										"settingName": "hostedPaymentIFrameCommunicatorUrl",
+										"settingValue": "{\"url\": \"https://jopatwa.github.io/testpage\"}"
+									}]
+								}
 							}
-						},
-						"hostedPaymentSettings": {
-							"setting": [{
-								"settingName": "hostedPaymentReturnOptions",
-								"settingValue": "{\"showReceipt\": true, \"url\": \"https://jopatwa.github.io/testpage\", \"urlText\": \"Continue\", \"cancelUrl\": \"https://jopatwa.github.io/testpage\", \"cancelUrlText\": \"Cancel\"}"
-							}, {
-								"settingName": "hostedPaymentButtonOptions",
-								"settingValue": "{\"text\": \"Pay\"}"
-							}, {
-								"settingName": "hostedPaymentStyleOptions",
-								"settingValue": "{\"bgColor\": \"blue\"}"
-							}, {
-								"settingName": "hostedPaymentPaymentOptions",
-								"settingValue": "{\"cardCodeRequired\": false, \"showCreditCard\": true, \"showBankAccount\": true}"
-							}, {
-								"settingName": "hostedPaymentSecurityOptions",
-								"settingValue": "{\"captcha\": false}"
-							}, {
-								"settingName": "hostedPaymentShippingAddressOptions",
-								"settingValue": "{\"show\": false, \"required\": false}"
-							}, {
-								"settingName": "hostedPaymentBillingAddressOptions",
-								"settingValue": "{\"show\": true, \"required\": false}"
-							}, {
-								"settingName": "hostedPaymentCustomerOptions",
-								"settingValue": "{\"showEmail\": true, \"requiredEmail\": true, \"addPaymentProfile\": true}"
-							}, {
-								"settingName": "hostedPaymentOrderOptions",
-								"settingValue": "{\"show\": true, \"merchantName\": \"G and S Questions Inc.\"}"
-							}, {
-								"settingName": "hostedPaymentIFrameCommunicatorUrl",
-								"settingValue": "{\"url\": \"https://jopatwa.github.io/testpage\"}"
-							}]
 						}
-					}
+					$.ajax({
+						'url': url_base,
+						'type': 'POST',
+						'content-Type': 'x-www-form-urlencoded',
+						'dataType': 'json',
+						'data': JSON.stringify(requestBody),
+						'success': function (result) {
+							$("#token").val(result.token);
+						}
+					});
 				}
-			$.ajax({
-				'url': url_base,
-				'type': 'POST',
-				'content-Type': 'x-www-form-urlencoded',
-				'dataType': 'json',
-				'data': JSON.stringify(requestBody),
-				'success': function (result) {
-					$("#token").val(result.token);
-				}
-			});
-		}
 	</script>
 
 	<script type="text/javascript">
