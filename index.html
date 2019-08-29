@@ -168,6 +168,19 @@
 			});
 		}
 
+		function getNews() {
+			var url_base = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-29&sortBy=publishedAt&apiKey=67e11e145e34441bb45b4e4e2d7e920d';
+			$.ajax({
+				'url': url_base,
+				'type': 'GET',
+				'content-Type': 'x-www-form-urlencoded',
+				'dataType': 'json',
+				'success': function (result) {
+					console.log("News Result: " + result);
+				}
+			});
+		}
+
 	</script>
 
 	<script type="text/javascript">
