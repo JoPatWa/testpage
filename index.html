@@ -29,13 +29,8 @@
 				'dataType': 'json',
 				'success': function (results) {
 					console.log("News Result: " + JSON.stringify(results.articles[0]));
-
 					console.log("News Result: " + JSON.stringify(results.articles[0].source.name));
-					document.getElementById('news').innerHTML = results.articles[0].source.name;
-					document.getElementById('news').innerHTML = results.articles[0].source.title;
-
-
-
+					return results;
 				}
 				
 			});
@@ -108,6 +103,7 @@
 	<div>
 		<center>
 			<button id="btnNews" class="button button-1" onclick='getNews()'>Get News</button>
+			<script="text/javascript">console.log("News Result: " + JSON.stringify(results.articles[0].source.name));</script>
 		</center>
 	</div>
 	<div id="news"></div>
