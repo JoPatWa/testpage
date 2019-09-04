@@ -19,24 +19,6 @@
 
 
 	</script>
-	<script type="text/javascript">
-		function getNews() {
-			var url_base = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-29&sortBy=publishedAt&apiKey=67e11e145e34441bb45b4e4e2d7e920d';
-			$.ajax({
-				'url': url_base,
-				'type': 'GET',
-				'content-Type': 'x-www-form-urlencoded',
-				'dataType': 'json',
-				'success': function (results) {
-					console.log("News Result: " + JSON.stringify(results.articles[0]));
-					console.log("News Result: " + JSON.stringify(results.articles[0].source.name));
-					document.getElementById('news').innerHTML = JSON.stringify(results.articles[0].source.name);
-				}
-
-			});
-
-		}
-	</script>
 
 	<script type="text/javascript">
 		//<![CDATA[
@@ -100,12 +82,6 @@
 			<button id="btnOpenAuthorizeNetIFrame" class="button button-1" onclick='getToken()'>Show Payment Form</button>
 		</center>
 	</div>
-	<div>
-		<center>
-			<button id="btnNews" class="button button-1" onclick='getNews()'>Get News</button>
-		</center>
-	</div>
-	<div id="news"></div>
 	<center>
 		<div id="iframe_holder" class="center-block" style="width:90%;max-width: 1000px">
 			<iframe id="add_payment" class="embed-responsive-item panel" name="add_payment" width="100%" frameborder="0" scrolling="no"
